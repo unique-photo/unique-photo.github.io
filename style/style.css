@@ -1,0 +1,179 @@
+/*
+$$$$$$$$$$$$$$$$$$$$$$$$
+$$$ Главная страница $$$
+$$$$$$$$$$$$$$$$$$$$$$$$
+*/
+
+.row:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.row { display: inline-block; }
+* {
+	box-sizing: border-box;
+}
+
+/* start commented backslash hack \*/
+* html .row { height: 1%; }
+.row { display: block; }
+/* close commented backslash hack */
+
+html {
+	background: #e8f0f3;
+	display: block;
+
+}
+
+body {
+	color: #63152b;
+	position: relative;
+	display: block;
+	max-width: 1000px;
+	min-width: 1000px;
+	margin: auto;
+}
+
+a {
+	text-decoration: none;
+	color: #63152b;
+}
+a:hover {
+	text-decoration: none;
+	color: #63154b;
+}
+a:active {
+	text-decoration: none;
+	color: #63154b;
+	margin-bottom: 3px;
+}
+
+
+.header {
+	margin-bottom: 10px;
+}
+
+.inner-header {
+	background: #dad8e3;
+	height: 150px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	
+}
+
+.content {
+	width: 60%;
+	float: right
+}
+
+.inner-content {
+	background: #dad8e3;
+	min-height: 500px;
+	padding-top: 1px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);	
+}
+
+.sidebar {
+	width: 20%;
+	float: right;
+	padding-left: 10px;
+}
+
+.inner-sidebar {
+	background: #dad8e3;
+	padding-top: 1px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.sidebar2 {
+	width: 20%;
+	float: left;
+	padding-right: 10px;
+	margin-top: 0px;
+}
+
+.inner-sidebar2 {
+	background: #dad8e3;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);	
+}
+
+.footer {
+	margin-top: 10px;
+}
+
+.inner-footer {
+	background: #dad8e3;
+	height: 200px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.boss {
+	color: darkgray;
+	margin-left: 48px;
+}
+
+.boss1 {
+	color: crimson;
+	display: inline;
+	font-size: 30px;
+}
+
+.gif-img {
+	height: 500px;
+	width: 500px;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+
+li {
+	list-style-type: none;
+}
+
+input.style-input {
+   border: 1px solid #cccccc;
+   border-radius: 10px;
+   background: #ffffff !important;
+   outline: none;
+   color: #cccccc;
+   font-size: 16px;
+   font-family: Tahoma;
+	padding-left: 10px;
+}
+
+input.stule-input:focus {
+	border: 1px solid #63152b;
+}
+
+
+/*
+$$$$$$$$$$$$$$$$$$$$$$$
+$$$   РЕГИСТРАЦИЯ   $$$
+$$$$$$$$$$$$$$$$$$$$$$$
+*/
+
+form.reg-form {
+	margin-left: 20%;
+}
+
+.input-length {
+	display: inline;
+	margin-left: 15px;
+	
+}
+
+
+/*
+$$$$$$$$$$$$$$$$$$$$$
+$$$     ЛОГИН     $$$
+$$$$$$$$$$$$$$$$$$$$$
+*/
+
+form.login-form {
+	margin-left: 20px;
+	padding-bottom: 10px;
+}
