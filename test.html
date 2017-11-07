@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img class="image" style="margin-top: 500px;" src="hi.png">
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		var $img = $('.image');
+		var $win = $(window);
+
+		$win.on('scroll', function(){
+			var top = $win.scrollTop() / 3;
+			$img.css('transform', 'rotate(' + top + 'deg)')
+		});
+	</script>
+</body>
+</html>

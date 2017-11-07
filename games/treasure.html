@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS - Games</title>
+
+  <!-- Bootstrap Grid -->
+  <link rel="stylesheet" type="text/css" href="/assets/bootstrap-grid-only/css/grid12.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+  <!-- Custom -->
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="cssreloader.js"></script>
+</head>
+	<body>
+		<div id="wrapper">
+			<header id="header">
+			  <div class="header__top">
+				<div class="container">
+				  <div class="header__top__logo">
+					<h1 style="color: #376d8e;">JS - Games</h1>
+				  </div>
+				  <nav class="header__top__menu">
+					<ul>
+					  <li><a href="/">Главная</a></li>
+					  <li><a href="#">Список игр</a></li>
+					  <li><a href="#">Группа ВК</a></li>
+					</ul>
+				  </nav>
+				</div>
+			  </div>
+
+			  <div class="header__bottom">
+				<div class="container">
+				  <nav>
+					<ul>
+						<li><a href="/games/treasure.html">Найди клад</a></li>
+					</ul>
+				  </nav>
+				</div>
+			  </div>
+			</header>
+		
+			<div id="content">
+				<div class="container">
+					<div class="row">
+						<section class="content__left col-md-8">
+							<div class="block">
+							  <h3>Найди клад</h3>
+							  <div class="block__content">
+								  <img style="width:100%;height:100%;" id="map" src="http://cs628422.vk.me/v628422832/3876e/Q-g0I2LuGbY.jpg">
+							  </div>
+							</div>
+						</section>
+						<section class="content__right col-md-4">
+							<div class="block">
+								<h3 style="text-align:center;">Описание к игре:</h3><br>
+								<h3 style="float: left;">Подсказка:</h3>
+								<h3 style="float: left; margin-left: 15px;" id="distance"></h3><br><br>
+								<h3 style="float: left;">Кол-во нажатий:</h3>
+								<h3 style="float: left; margin-left: 15px; padding-right: 7px;" id="hits">0</h3>
+								<br><br><h3 style="float: left; font-size: 90%;">Воспользуйся подсказкой. После первого клика отобразится цифра, которая означает Растояние до загаданной точки. Удачи!</h3><br><br><br><br><br>
+								<button id="refresh" type="submit">Обновить счет</button>
+								<button id="lim_on" type="submit">Вкл. огранич</button>
+								<button id="lim_off" type="submit">Выкл. огранич</button>
+							</div>
+						</section>
+						<section class="content__right col-md-4">
+							<div class="block">
+								<h3 style="text-align:center;">Update Лист:</h3><br>
+								<ul type="circle">
+									<li>Ручная настройка ограничений</li>
+									<li>Отображение к-ва ограниченых кликов</li>
+									<li>Отображение счета "0", вместо "null"</li>
+								</ul>
+							</div>
+						</section>
+<script>
+function getRandomNum(size){
+	return Math.floor(Math.random() * size);
+};
+function getDistance(event, target) {
+	var diffX = event.offsetX - target.x;
+	var diffY = event.offsetY - target.y;
+	return Math.sqrt((diffX * diffX) + (diffY * diffY));
+};
+
+function getDistanceHint(distance){
+	if(distance < 20){
+		return "1";
+	}else if(distance < 50){
+		return "2";
+	}else if(distance < 85){
+		return "3";
+	}else if(distance < 160){
+		return "4";
+	}else if(distance < 280){
+		return "5";
+	}else if(distance < 390){
+		return "6";
+	}else if(distance < 500){
+		return "7";
+	}else{
+		return "10+";
+	}
+};
+
+var clicks = 0;
+var width = 753;
+var height = 500;
+var target = {x: getRandomNum(width), y: getRandomNum(height)};
+
+$("#map").click(function(event){
+	clicks++;
+	var distance = getDistance(event, target);
+	var distanceHint = getDistanceHint(distance);
+
+	$("#distance").text(distanceHint);
+	$("#hits").text(clicks);
+
+	if(distance < 8){
+	alert("Победа! Игра пройдена за: " + clicks + " клика(ов).");
+	}
+});
+	
+$("#refresh").click(function resfresh() {
+	clicks = 0;
+	$("#hits").text("0");
+});
+
+	
+	
+</script>
+<script src="but.js"></script>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
